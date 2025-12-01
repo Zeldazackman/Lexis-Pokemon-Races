@@ -166,7 +166,7 @@
 					"zLevel": 24.0,
 					"transformationGroups": [],
 					"anchorPart": "hindlegFront",
-					"processingDirectives" : "<bodyDirectives>"
+					"processingDirectives" : "<cosmetic<slot>Directives>"
 				},
 				"partStates": {
 					"body": {
