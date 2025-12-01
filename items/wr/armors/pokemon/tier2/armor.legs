@@ -6,7 +6,7 @@
 	"rarity" : "Common",
 	"category" : "legarmour",
 	"description" : "Provides some protection for your hindlegs.",
-	"shortdescription" : "Quadruped Iron Boots",
+	"shortdescription" : "Quadruped Tungsten-Silver Boots",
 	"tooltipKind" : "armor",
 
 	"maleFrames" : "pants.png",
@@ -47,8 +47,8 @@
 	"itemTags" : [ "tier2armour" ],
 
 	"colorOptions" : [
-		// BROWN
-		{ "ffca8a" : "ccae7c", "e0975c" : "a47844", "a85636" : "754c23", "6f2919" : "472b13" },
+		// GREY
+		{ "ffca8a" : "e5e9f1", "e0975c" : "c4c7cd", "a85636" : "72767f", "6f2919" : "4a4d52" },
 		// BLACK
 		{ "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
 		// GREY
@@ -60,7 +60,7 @@
 		// ORANGE
 		{ "ffca8a" : "ffd495", "e0975c" : "ea9931", "a85636" : "af4e00", "6f2919" : "6e2900" },
 		// YELLOW
-		{ "ffca8a" : "ffffa7", "e0975c" : "e2c344", "a85636" : "a46e06", "6f2919" : "642f00" },
+		{ "ffca8a" : "ffffa7", "e0975c" : "e2c344", "a85636" : "a46e06", "6f2919" : "745012" },
 		// GREEN
 		{ "ffca8a" : "b2e89d", "e0975c" : "51bd3b", "a85636" : "247824", "6f2919" : "144216" },
 		// BLUE
