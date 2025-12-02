@@ -14,7 +14,7 @@ local player_patch = {}
 local quests_patch = {}
 local aiConfig = assets.json("/ai/ai.config")
 local universeServerConfig = assets.json("/universe_server.config")
-for speciesPath, species in ipairs(races) do
+for _, species in ipairs(races) do
 	local speciesConfig = assets.json("/species/" .. species .. ".species")
 	if speciesConfig.charCreationPatch ~= false then
 		table.insert(charcreation_patch, { op = "add", path = "/speciesOrdering/-", value = species })
@@ -62,37 +62,35 @@ for speciesPath, species in ipairs(races) do
 		portraitFrames = "portraits/novakidportrait.png",
 		staticFrames = "staticGlitch.png"
 	}
-    if ai.directives then
-        assets.add("/ai/" .. species .. "/ai.png", assets.image("/ai/" .. ai.aiFrames):process(ai.directives))
-        assets.add("/ai/" .. species .. "/portrait.png", assets.image("/ai/" .. ai.portraitFrames):process(ai.directives))
-        assets.add("/ai/" .. species .. "/static.png", assets.image("/ai/" .. ai.staticFrames):process(ai.directives))
+	if ai.directives then
+		assets.add("/ai/" .. species .. "/ai.png", assets.image("/ai/" .. ai.aiFrames):process(ai.directives))
+		assets.add("/ai/" .. species .. "/portrait.png", assets.image("/ai/" .. ai.portraitFrames):process(ai.directives))
+		assets.add("/ai/" .. species .. "/static.png", assets.image("/ai/" .. ai.staticFrames):process(ai.directives))
 
-        assets.add("/ai/portraits/" .. species .. "portrait.png", assets.image("/ai/" .. ai.portraitFrames):process(ai.directives))
-        assets.add("/ai/portraits/" .. species .. "questportrait.png", assets.image("/ai/" .. ai.questPortrait):process(ai.directives))
+		assets.add("/ai/portraits/" .. species .. "portrait.png", assets.image("/ai/" .. ai.portraitFrames):process(ai.directives))
+		assets.add("/ai/portraits/" .. species .. "questportrait.png", assets.image("/ai/" .. ai.questPortrait):process(ai.directives))
 
-        assets.add("/ai/" .. species .. "/ai.frames", assets.bytes(assets.frames("/ai/" .. ai.aiFrames).file))
-        assets.add("/ai/" .. species .. "/static.frames", assets.bytes(assets.frames("/ai/" .. ai.staticFrames).file))
-        assets.add("/ai/" .. species .. "/portrait.frames", assets.bytes(assets.frames("/ai/" .. ai.portraitFrames).file))
+		assets.add("/ai/" .. species .. "/ai.frames", assets.bytes(assets.frames("/ai/" .. ai.aiFrames).file))
+		assets.add("/ai/" .. species .. "/static.frames", assets.bytes(assets.frames("/ai/" .. ai.staticFrames).file))
+		assets.add("/ai/" .. species .. "/portrait.frames", assets.bytes(assets.frames("/ai/" .. ai.portraitFrames).file))
 
-        assets.add("/ai/portraits/" .. species .. "portrait.frames",
-            assets.bytes(assets.frames("/ai/" .. ai.portraitFrames).file))
+		assets.add("/ai/portraits/" .. species .. "portrait.frames",
+			assets.bytes(assets.frames("/ai/" .. ai.portraitFrames).file))
 
-        ai = {
-            aiFrames = species .. "/ai.png",
-            portraitFrames = species .. "/portrait.png",
-            staticFrames = species .. "/static.png"
-        }
-    else
-        if not assets.exists("/ai/portraits/" .. species .. "portrait.png") then
-            assets.add("/ai/portraits/" .. species .. "portrait.png",
-                assets.image("/ai/" .. ai.portraitFrames))
-        end
-        if not assets.exists("/ai/portraits/" .. species .. "questportrait.png") then
-            assets.add("/ai/portraits/" .. species .. "questportrait.png",
-                assets.image("/ai/portraits/" .. fallbackShip .. "questportrait.png"))
-        end
-    end
-	sb.logInfo(sb.printJson(ai,2))
+		ai = {
+			aiFrames = species .. "/ai.png",
+			portraitFrames = species .. "/portrait.png",
+			staticFrames = species .. "/static.png"
+		}
+	else
+		if not assets.exists("/ai/portraits/" .. species .. "portrait.png") then
+			assets.add("/ai/portraits/" .. species .. "portrait.png", assets.image("/ai/" .. ai.portraitFrames))
+			assets.add("/ai/portraits/" .. species .. "portrait.frames", assets.bytes(assets.frames("/ai/" .. ai.portraitFrames).file))
+		end
+		if not assets.exists("/ai/portraits/" .. species .. "questportrait.png") then
+			assets.add("/ai/portraits/" .. species .. "questportrait.png", assets.image("/ai/portraits/" .. fallbackShip .. "questportrait.png"))
+		end
+	end
 
 	ai_patch = sb.jsonMerge(ai_patch, {
 		species = {
