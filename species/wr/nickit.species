@@ -1,9 +1,9 @@
 {
-	"kind" : "wr/nickit_anthro",
+	"kind" : "wr/nickit",
 
 	"potionRarity" : "rare",
 	"charCreationTooltip" : {
-			"title" : "Nickit (Anthro)",
+			"title" : "Nickit",
 			"subTitle" : "Au",
 			"description" : "You better watch your wallet..."
 	},
@@ -34,29 +34,31 @@
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
 
 	"buildScripts" : ["/humanoid/opensb/build.lua","/humanoid/wr/build_pokemon.lua"],
+	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
 	"humanoidOverrides" : {
-		"useAnimation" : true,
 		"animation" : {
-			"version" : 1,
-			"globalTagDefaults" : {},
-			"includes" : [
-				"/humanoid/opensb/humanoid.animation",
-				"/humanoid/wr/layered_emote.animation",
-				"/humanoid/wr/nickit_anthro/tail.animation"
-			],
 			"animatedParts" : {
-				"stateTypes" : {},
-				"parts" : {}
-			},
-			"transformationGroups" : {}
+				"parts" : {
+					"facialHair" : {
+						"properties" : {
+							"anchorPart" : "body",
+							"transformationGroups" : ["headOffset"],
+							"offset" : [0.9375, -0.4375],
+							"zLevel" : 12.9,
+							"processingDirectives" : "<facialHairDirectives>"
+						}
+					}
+				}
+			}
 		},
+
 		"particleEmitters": {
 			"deathPoof" : {
 				"particles" : [
 					{
 						"particle" : {
 							"type" : "animated",
-							"animation" : "/animations/wr/pokemon/playerdeath/anthro/playerdeath.animation",
+							"animation" : "/animations/wr/pokemon/playerdeath/quadruped/playerdeath.animation",
 							"size" : 1,
 							"angularVelocity" : 0,
 							"fade" : 1,
@@ -93,12 +95,12 @@
 		{
 			"name" : "male",
 			"image" : "/interface/title/male.png",
-			"characterImage" : "/humanoid/wr/nickit_anthro/icon.png"
+			"characterImage" : "/humanoid/wr/nickit/icon.png"
 		},
 		{
 			"name" : "female",
 			"image" : "/interface/title/female.png",
-			"characterImage" : "/humanoid/wr/nickit_anthro/icon.png"
+			"characterImage" : "/humanoid/wr/nickit/icon.png"
 		}
 	],
 	"charGenTextLabels" : [
@@ -117,10 +119,11 @@
 	],
 
 	"hairStyle" : [
-		"",
-		"male1", "male2", "male3", "male4", "male5", "male6", "male7", "male8", "male9", "male10", "male11", "male12", "male13", "male14", "male15", "male16", "male17", "male18", "male19", "male21", "male22", "male23", "male24", "male25", "male26", "male27", "male28", "male29", "male30", "male31", "male32", "male33", "male34", "male35", "male36", "male37", "male38", "male39", "male40", "male41", "male42", "male43", "male44", "male45", "male46", "male47", "male48", "male49", "male50", "male51", "male52", "male53", "male58", "male59", "male60", "male61", "male62", "male63", "male64",
-		"",
-		"fem1", "fem2", "fem3", "fem4", "fem5", "fem6", "fem7", "fem8", "fem9", "fem10", "fem11", "fem12", "fem13", "fem14", "fem15", "fem16", "fem17", "fem18", "fem19", "fem20", "fem21", "fem22", "fem23", "fem24", "fem25", "fem26", "fem27", "fem28", "fem29", "fem30", "fem31", "fem32", "fem33", "fem34", "fem35", "fem36", "fem37", "fem38", "fem39", "fem40", "fem41", "fem42", "fem43", "fem44", "fem45", "fem46", "fem47", "fem48", "fem49", "fem50", "fem51", "fem52", "fem53", "fem54", "fem56", "fem57", "fem58", "fem59", "fem60", "fem61", "fem62", "fem63", "fem64"
+		""
+		// we'll figure something out for hair rather than just re-using human's later
+		// "male1", "male2", "male3", "male4", "male5", "male6", "male7", "male8", "male9", "male10", "male11", "male12", "male13", "male14", "male15", "male16", "male17", "male18", "male19", "male21", "male22", "male23", "male24", "male25", "male26", "male27", "male28", "male29", "male30", "male31", "male32", "male33", "male34", "male35", "male36", "male37", "male38", "male39", "male40", "male41", "male42", "male43", "male44", "male45", "male46", "male47", "male48", "male49", "male50", "male51", "male52", "male53", "male58", "male59", "male60", "male61", "male62", "male63", "male64",
+		// "",
+		// "fem1", "fem2", "fem3", "fem4", "fem5", "fem6", "fem7", "fem8", "fem9", "fem10", "fem11", "fem12", "fem13", "fem14", "fem15", "fem16", "fem17", "fem18", "fem19", "fem20", "fem21", "fem22", "fem23", "fem24", "fem25", "fem26", "fem27", "fem28", "fem29", "fem30", "fem31", "fem32", "fem33", "fem34", "fem35", "fem36", "fem37", "fem38", "fem39", "fem40", "fem41", "fem42", "fem43", "fem44", "fem45", "fem46", "fem47", "fem48", "fem49", "fem50", "fem51", "fem52", "fem53", "fem54", "fem56", "fem57", "fem58", "fem59", "fem60", "fem61", "fem62", "fem63", "fem64"
 	],
 
 	// These are the tables for the replace colors, if your sprites neeed to have their colors replaced, you should probably define those colors here
@@ -154,26 +157,35 @@
 		// Empty Hands
 			{ "item" : "wr/nickit_flag" },
 
-		// Anvil
-			{ "item" : "novatier1head" },
-			{ "item" : "novatier1chest" },
-			{ "item" : "novatier1pants" },
-			{ "item" : "novatier2head" },
-			{ "item" : "novatier2chest" },
-			{ "item" : "novatier2pants" },
+			// Anvil
+			{ "item" : "wr/pokemonTier1Head" },
+			{ "item" : "wr/pokemonTier1Chest" },
+			{ "item" : "wr/pokemonTier1Legs" },
+			{ "item" : "wr/pokemonTier2Head" },
+			{ "item" : "wr/pokemonTier2Chest" },
+			{ "item" : "wr/pokemonTier2Legs" },
+
+			{ "item" : "ironshortsword" },
+			{ "item" : "ironbroadsword" },
+			{ "item" : "tungstenaxe" },
+			{ "item" : "tungstenhammer" },
 			{ "item" : "ironrevolver" },
 			{ "item" : "ironassaultrifle" },
 			{ "item" : "tungstenmagnum" },
 			{ "item" : "tungstenshotgun" },
 
+			// Anvil2
+			{ "item" : "wr/pokemonTier3Head" },
+			{ "item" : "wr/pokemonTier3Chest" },
+			{ "item" : "wr/pokemonTier3Legs" },
+			{ "item" : "wr/pokemonTier4Head" },
+			{ "item" : "wr/pokemonTier4Chest" },
+			{ "item" : "wr/pokemonTier4Legs" },
 
-		// Anvil2
-			{ "item" : "novatier3head" },
-			{ "item" : "novatier3chest" },
-			{ "item" : "novatier3pants" },
-			{ "item" : "novatier4head" },
-			{ "item" : "novatier4chest" },
-			{ "item" : "novatier4pants" },
+			{ "item" : "titaniumdagger" },
+			{ "item" : "titaniumspear" },
+			{ "item" : "durasteelbroadsword" },
+			{ "item" : "durasteelshortsword" },
 			{ "item" : "titaniummachinepistol" },
 			{ "item" : "titaniumsniperrifle" },
 			{ "item" : "durasteelrevolver" },

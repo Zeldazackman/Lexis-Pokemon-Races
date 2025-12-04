@@ -10,16 +10,17 @@ function update(diskStore)
 	if oldIdMap[diskStore.identity.species:lower()] then
 		diskStore.identity.species = oldIdMap[diskStore.identity.species:lower()]
 	end
-	fixFollowers(diskStore.companions.crew)
-	fixFollowers(diskStore.companions.shipCrew)
-	fixFollowers(diskStore.companions.followers)
-
+	if diskStore.companions then
+		fixFollowers(diskStore.companions.crew)
+		fixFollowers(diskStore.companions.shipCrew)
+		fixFollowers(diskStore.companions.followers)
+	end
 
 	return diskStore
 end
 
 function fixFollowers(companions)
-	for i, companion in ipairs(companions) do
+	for i, companion in ipairs(companions or {}) do
 		if oldIdMap[companion.config.species:lower()] then
 			companion.config.species = oldIdMap[companion.config.species:lower()]
 		end
