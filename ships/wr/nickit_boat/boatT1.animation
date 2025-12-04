@@ -1,0 +1,43 @@
+{
+	"animatedParts": {
+		"stateTypes" : {
+			"sail_pulse" : {
+				"default": "idle",
+				"priority" : 0,
+				"states" : {
+					"idle": { "frames": 28, "cycle": 2, "mode": "loop" }
+				}
+			}
+		},
+		"parts": {
+			"boat": {
+				"properties": {
+					"zLevel": 0,
+					"centered": false,
+					"fullbright" : true,
+					"image" : "boatT1.png"
+				}
+			},
+			"boat_layer": {
+				"properties": {
+					"zLevel": 1,
+					"centered": false,
+					"image" : "boatT1.png?multiply=FFFFFFBD;"
+				}
+			},
+			"sail_pulse": {
+				"properties": {
+					"zLevel": 1,
+					"centered": false,
+					"fullbright" : true,
+					"offset" : [8,26]
+				},
+				"partStates" : {
+					"sail_pulse" : {
+						"idle" : {"properties":{"image" : "sail_pulse.png:<frameIndex>"}}
+					}
+				}
+			}
+		}
+	}
+}

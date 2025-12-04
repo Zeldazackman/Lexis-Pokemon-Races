@@ -19,9 +19,8 @@
 				{ "image" : "boatT1.png?multiply=FFFFFFBD" },
 				{ "image" : "sail_pulse.png:<frame>", "fullbright" : true, "position" : [64, 208]  }
 			],
-			"frames" : 28,
-			"animationCycle" : 2,
 			"imagePosition" : [-432, -80],
+			"animationPosition" : [-432, -80],
 			"spaces" : [[-45,7],[-41,0],[-4,68],[0,0],[34,14], [48,15], [49,15]],
 			"renderLayer" : "BackgroundTile-10",
 			"anchors" : [ ],
@@ -30,7 +29,8 @@
 			"collisionSpaces" : [ [-4,68], [48,15], [49,15] ]
 		}
 	],
-	"scripts" : ["/scripts/wr/objects/multi_object.lua"],
+	"animation" : "boatT1.animation",
+	"scripts" : ["/scripts/wr/objects/multi_object.lua","/scripts/wr/objects/warp_animation_rate.lua"],
 	"placeObjects" : [
 		["wr/nickit_boat_col",[0,1],1,{"unbreakable":true}],
 		["wr/nickit_boat_fg",[-1,0],1,{"unbreakable":true}],
