@@ -40,7 +40,8 @@
 		["wr/meowscarada_boat_shipdoor",[-19,3],1,{}],
 		["wr/meowscarada_boat_shipdoor",[-29,3],1,{}],
 		["wr/meowscarada_boat_shipdoor",[-19,15],1,{}],
-		["wr/meowscarada_boat_shipdoor",[-41,15],1,{}]
+		["wr/meowscarada_boat_shipdoor",[-41,15],1,{}],
+		["wr/meowscarada_flag",[-4,69],-1,{}]
 	],
 
 	"objectType" : "physics",
