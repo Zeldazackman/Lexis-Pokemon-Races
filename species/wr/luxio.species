@@ -23,7 +23,11 @@
 		"staticFrames" : "wr/pokemon/static.png",
 		"questPortrait" : "portraits/wr/pokemonquestportrait.png",
 
-		"directives" : ""
+		"directives" : "",
+		"messagesConfig" : {
+			"messages" : "/ai/wr/pokemon/messages.config",
+			"default" : "/ai/wr/pokemon/defaultMessage.config"
+		}
 	},
 	"effectDirectives" : "?replace;31a6ff=ffd029;9bd4ffFF=ffeb64;FEFFFF=fff8c6;",
 

@@ -15,6 +15,7 @@ local player_patch = {}
 local quests_patch = {}
 local aiConfig = assets.json("/ai/ai.config")
 local universeServerConfig = assets.json("/universe_server.config")
+local radioMessagePatches = {}
 for _, species in ipairs(races) do
 	local speciesConfig = assets.json("/species/" .. species .. ".species")
 	if speciesConfig.charCreationPatch ~= false then
@@ -57,12 +58,41 @@ for _, species in ipairs(races) do
 			assets.image("/cinematics/story/smallship/"..fallbackShip.."ship2.png"))
 	end
 
+	if speciesConfig.messagesConfig then
+		local messages = assets.json(speciesConfig.messagesConfig.messages)
+		for _, path in ipairs(assets.byExtension("radiomessages")) do
+			radioMessagePatches[path] = radioMessagePatches[path] or {}
+			for messageID, message in pairs(assets.json(path)) do
+				if messages[messageID] then
+					radioMessagePatches[path][messageID] = radioMessagePatches[path][messageID] or {}
+					radioMessagePatches[path][messageID].speciesMessage = radioMessagePatches[path][messageID].speciesMessage or {}
+					radioMessagePatches[path][messageID].speciesMessage[species] = messages[messageID]
+				end
+			end
+		end
+	end
+
 
 	local ai = speciesConfig.ai or aiConfig.species[fallbackShip] or {
 		aiFrames = "NovakidAI.png",
 		portraitFrames = "portraits/novakidportrait.png",
 		staticFrames = "staticGlitch.png"
 	}
+	if ai.messagesConfig then
+		local messages = assets.json(ai.messagesConfig.messages)
+		local default = assets.json(ai.messagesConfig.default)
+		for _, path in ipairs(assets.byExtension("radiomessages")) do
+			radioMessagePatches[path] = radioMessagePatches[path] or {}
+			for messageID, message in pairs(assets.json(path)) do
+				if (not message.senderName) or (message.senderName == "SAIL") or (message.senderName == "S.A.I.L") then
+					radioMessagePatches[path][messageID] = radioMessagePatches[path][messageID] or {}
+					radioMessagePatches[path][messageID].speciesAiMessage = radioMessagePatches[path][messageID].speciesAiMessage or {}
+					radioMessagePatches[path][messageID].speciesAiMessage[species] = sb.jsonMerge(default, messages[messageID])
+				end
+			end
+		end
+	end
+
 	if ai.directives then
 		assets.add("/ai/" .. species .. "/ai.png", assets.image("/ai/" .. ai.aiFrames):process(ai.directives))
 		assets.add("/ai/" .. species .. "/portrait.png", assets.image("/ai/" .. ai.portraitFrames):process(ai.directives))
@@ -81,7 +111,8 @@ for _, species in ipairs(races) do
 		ai = {
 			aiFrames = species .. "/ai.png",
 			portraitFrames = species .. "/portrait.png",
-			staticFrames = species .. "/static.png"
+			staticFrames = species .. "/static.png",
+			messagesConfig = ai.messagesConfig
 		}
 	else
 		if not assets.exists("/ai/portraits/" .. species .. "portrait.png") then
@@ -187,3 +218,6 @@ assets.add("/universe_server.config.patch", sb.printJson(universe_server_patch))
 assets.add("/ai/ai.config.patch", sb.printJson(ai_patch))
 assets.add("/player.config.patch", sb.printJson(player_patch))
 assets.add("/quests/quests.config.patch", sb.printJson(quests_patch))
+for path, patch in pairs(radioMessagePatches) do
+	assets.add(path..".patch", sb.printJson(patch))
+end

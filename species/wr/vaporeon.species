@@ -15,7 +15,11 @@
 		"staticFrames" : "wr/pokemon/static.png",
 		"questPortrait" : "portraits/wr/pokemonquestportrait.png",
 
-		"directives" : "?replace;5a00b7=006ab7;740de2=0d89e2;9529ff=29a1ff;b168fb=68bcfb;dcc6ff=c6ecff"
+		"directives" : "?replace;5a00b7=006ab7;740de2=0d89e2;9529ff=29a1ff;b168fb=68bcfb;dcc6ff=c6ecff",
+		"messagesConfig" : {
+			"messages" : "/ai/wr/pokemon/messages.config",
+			"default" : "/ai/wr/pokemon/defaultMessage.config"
+		}
 	},
 	"effectDirectives" : "?replace;31a6ff=0b8aff;9bd4ffFF=60b3ff;FEFFFF=98ceff;",
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
