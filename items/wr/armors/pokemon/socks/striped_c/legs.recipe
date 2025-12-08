@@ -1,0 +1,8 @@
+{
+  "input" : [
+    { "item" : "fabric", "count" : 2 }
+  ],
+  "duration" : 5,
+  "output" : { "item" : "wr/pokemonStripedSocksCLegs", "count" : 1 },
+  "groups" : [ "craftingwheel", "clothes" ]
+}

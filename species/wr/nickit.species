@@ -237,7 +237,9 @@
 			{ "item" : "wr/pokemonStripedSocksAChest" },
 			{ "item" : "wr/pokemonStripedSocksALegs" },
 			{ "item" : "wr/pokemonStripedSocksBChest" },
-			{ "item" : "wr/pokemonStripedSocksBLegs" }
+			{ "item" : "wr/pokemonStripedSocksBLegs" },
+			{ "item" : "wr/pokemonStripedSocksCChest" },
+			{ "item" : "wr/pokemonStripedSocksCLegs" }
 		]
 	}
 
