@@ -1,9 +1,9 @@
 {
-	"kind" : "wr/espeon",
+	"kind" : "wr/umbreon",
 
 	"fallbackShip" : "apex",
 	"charCreationTooltip" : {
-		"title" : "Espeon",
+		"title" : "Umbreon",
 		"subTitle" : "",
 		"description" : "Stop thinking so hard about not wanting mindreaders to know your deepest secrets."
 	},
@@ -13,7 +13,7 @@
 	"statusEffects" : [ { "stat":"breathProtection", "amount":1} ],
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
 	"buildScripts" : ["/humanoid/opensb/build.lua"],
-	"createScripts" : ["/species/wr/espeon.lua"],
+	"createScripts" : ["/species/wr/umbreon.lua"],
 	"humanoidOverrides" : {
 		"particleEmitters": {
 			"deathPoof" : {
@@ -124,12 +124,12 @@
 		{
 			"name" : "male",
 			"image" : "/interface/title/male.png",
-			"characterImage" : "/humanoid/wr/espeon/icon.png"
+			"characterImage" : "/humanoid/wr/umbreon/icon.png"
 		},
 		{
 			"name" : "female",
 			"image" : "/interface/title/female.png",
-			"characterImage" : "/humanoid/wr/espeon/icon.png"
+			"characterImage" : "/humanoid/wr/umbreon/icon.png"
 		}
 	],
 	"baseColorPalette" : {
