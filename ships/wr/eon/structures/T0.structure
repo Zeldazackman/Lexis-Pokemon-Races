@@ -1,0 +1,34 @@
+{
+  "config" : {
+    "shipUpgrades" : {
+      "capabilities" : [],
+      "crewSize" : 2
+    }
+  },
+
+  "backgroundOverlays" : [
+    {
+      "image" : "T0.png",
+      "position" : [0, 0],
+      "fullbright" : true
+    },
+    {
+      "image" : "T0.png?multiply=FFFFFF7F",
+      "position" : [0, 0]
+    }
+  ],
+  "foregroundOverlays" : [
+    {
+      "image" : "T0Walls.png",
+      "position" : [0, 0],
+      "fullbright" : true
+    },
+    {
+      "image" : "T0Walls.png?multiply=FFFFFF7F",
+      "position" : [0, 0]
+    }
+  ],
+
+  "blockKey" : "blockKey.config",
+  "blockImage" : "T0Blocks.png"
+}

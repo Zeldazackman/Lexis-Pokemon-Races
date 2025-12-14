@@ -1,12 +1,23 @@
 {
 	"kind" : "wr/flareon",
 
-	"fallbackShip" : "novakid",
 	"charCreationTooltip" : {
 		"title" : "Flareon",
 		"subTitle" : "Floofer",
 		"description" : "The floofiest floof."
 	},
+	"fallbackShip" : "novakid",
+	"ships" : [
+		"/ships/wr/eon/structures/T0.structure",
+		"/ships/wr/eon/structures/T1.structure",
+		"/ships/wr/eon/structures/T2.structure",
+		"/ships/wr/eon/structures/T3.structure",
+		"/ships/wr/eon/structures/T4.structure",
+		"/ships/wr/eon/structures/T5.structure",
+		"/ships/wr/eon/structures/T6.structure",
+		"/ships/wr/eon/structures/T7.structure",
+		"/ships/wr/eon/structures/T8.structure"
+	],
 	"ai" : {
 		"aiFrames" : "wr/pokemon/ai.png",
 		"portraitFrames" : "wr/pokemon/portrait.png",

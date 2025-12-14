@@ -1,0 +1,23 @@
+{
+  "config" : {
+    "shipUpgrades" : {
+      "capabilities" : ["teleport", "planetTravel", "systemTravel"],
+      "crewSize" : 12
+    }
+  },
+
+  "backgroundOverlays" : [
+    {
+      "image" : "T8.png",
+      "position" : [0, 0],
+      "fullbright" : true
+    },
+    {
+      "image" : "T8.png?multiply=FFFFFF7F",
+      "position" : [0, 0]
+    }
+  ],
+
+  "blockKey" : "blockKey.config",
+  "blockImage" : "T8Blocks.png"
+}

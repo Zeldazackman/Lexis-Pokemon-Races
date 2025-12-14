@@ -1,0 +1,34 @@
+{
+  "objectName" : "wr/eon_captainschair_fake",
+  "colonyTags" : ["meowscarada"],
+  "itemTags" : ["captainschair"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "loungeable",
+
+  "description" : "The Captain uses this to fly the ship.",
+  "shortdescription" : "Space Sloop Helm",
+  "race" : "meowscarada",
+  "category" : "furniture",
+
+  "inventoryIcon" : "captainschairicon.png",
+  "orientations" : [
+    {
+      "image" : "captainschair.png",
+      "imagePosition" : [-12, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+      "sitPosition" : [-12, 20]
+    }
+  ],
+
+  "sitOrientation" : "stand",
+  "sitEmote" : "happy",
+  "sitDance" : "warmhands",
+
+  "sitFlipDirection" : false
+}
