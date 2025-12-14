@@ -5,7 +5,7 @@
 	"charCreationTooltip" : {
 		"title" : "Umbreon",
 		"subTitle" : "",
-		"description" : "Stop thinking so hard about not wanting mindreaders to know your deepest secrets."
+		"description" : "If you stare into the void for long enough... it just might beg for treats"
 	},
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
@@ -151,7 +151,7 @@
 		"Dorsal Finn Color", // head option - hair color - facial hair
 		"Cheek Style", // shirt color
 		"-", // pants color
-		"Espeon", // species
+		"Umbreon", // species
 		"Personality" // personality
 	],
 	"cheekStyle": [
