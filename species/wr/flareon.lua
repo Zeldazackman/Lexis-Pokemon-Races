@@ -40,7 +40,7 @@ function create(name, species, genderIndex, furColor, fluffColor, bellyColor, he
 		name = name,
 		species = species,
 		gender = gender.name,
-		hairGroup = "",
+		hairGroup = "hair",
 		hairType = speciesConfig.hairStyle[hairStyle+1],
 		hairDirectives = directives,
 		bodyDirectives = directives,
