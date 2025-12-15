@@ -5,6 +5,7 @@ local races = {
 	"wr/flareon",
 	"wr/espeon",
 	"wr/umbreon",
+	"wr/leafeon",
 	"wr/absol",
 	"wr/luxio",
 	"wr/nickit",
