@@ -8,13 +8,19 @@
 
   "backgroundOverlays" : [
     {
+      "image" : "T4Background.png",
+      "position" : [10, 10]
+    }
+  ],
+  "foregroundOverlays" : [
+    {
       "image" : "T4.png",
-      "position" : [0, 0],
+      "position" : [10, 10],
       "fullbright" : true
     },
     {
-      "image" : "T4.png?multiply=FFFFFF7F",
-      "position" : [0, 0]
+      "image" : "T4Lit.png",
+      "position" : [10, 10]
     }
   ],
 
