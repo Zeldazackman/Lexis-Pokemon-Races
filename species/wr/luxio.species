@@ -86,13 +86,13 @@
 		{
 			"name" : "male",
 			"image" : "/interface/title/male.png",
-			"characterImage" : "/interface/title/luxiomale.png",
+			"characterImage" : "/humanoid/wr/luxio/iconmale.png",
 			"hairGroup" : "malehair"
 		},
 		{
 			"name" : "female",
 			"image" : "/interface/title/female.png",
-			"characterImage" : "/interface/title/luxiofemale.png",
+			"characterImage" : "/humanoid/wr/luxio/iconfemale.png",
 			"hairGroup" : "femalehair"
 		}
 	],
