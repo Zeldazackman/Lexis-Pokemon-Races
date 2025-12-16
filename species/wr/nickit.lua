@@ -5,9 +5,8 @@ local function wrap(index, length, secondary, secondaryLength)
 	if not index then
 		index = math.floor(wrap(secondary, secondaryLength * length) / secondaryLength)
 	end
-	index = math.abs(index)
-	if index < length then return index end
-	return math.fmod(index, length)
+	return math.abs(index) % length
+
 end
 function create(name, species, genderIndex, primaryColor, hairColor, pawsColor, hairStyle, bellyColor, shirtColor, eyeColor, pantsColor, personality, ...)
 	-- these values are zero indexed!

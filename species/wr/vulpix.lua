@@ -5,9 +5,8 @@ local function wrap(index, length, secondary, secondaryLength)
 	if not index then
 		index = math.floor(wrap(secondary, secondaryLength * length) / secondaryLength)
 	end
-	index = math.abs(index)
-	if index < length then return index end
-	return math.fmod(index, length)
+	return math.abs(index) % length
+
 end
 function create(name, species, genderIndex, primaryColor, hairColor, pawsColor, hairStyle, bellyColor, markingsColorChoice, eyeColor, pantsColor, personality, tailMarkingsColor, ...)
 	-- these values are zero indexed!
@@ -15,7 +14,6 @@ function create(name, species, genderIndex, primaryColor, hairColor, pawsColor, 
 	local speciesConfig = root.speciesConfig(species)
 	local humanoidConfig = sb.jsonMerge(root.assetJson(speciesConfig.humanoidConfig or "/humanoid.config"), speciesConfig.humanoidOverrides or {})
 
-	tailMarkingsColor = wrap(tailMarkingsColor, #speciesConfig.tailMarkingsColor, markingsColor, #speciesConfig.markingsColor)
 
 	genderIndex = wrap(genderIndex, #speciesConfig.genders)
 	primaryColor = wrap(primaryColor, #speciesConfig.primaryColor)
@@ -25,6 +23,7 @@ function create(name, species, genderIndex, primaryColor, hairColor, pawsColor, 
 	eyeColor = wrap(eyeColor, #speciesConfig.eyeColor)
 	hairStyle = wrap(hairStyle, #speciesConfig.hairStyle)
 	markingsColor = wrap(markingsColorChoice, #speciesConfig.markingsColor)
+	tailMarkingsColor = wrap(tailMarkingsColor, #speciesConfig.tailMarkingsColor, markingsColorChoice, #speciesConfig.markingsColor)
 	personality = wrap(personality, #humanoidConfig.personalities)
 
 	local directives = ""
