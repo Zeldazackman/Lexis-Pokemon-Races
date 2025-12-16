@@ -23,8 +23,8 @@
 
 	"statusEffects" : [ { "stat":"breathProtection", "amount":1} ],
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
-	"buildScripts" : ["/humanoid/opensb/build.lua"],
-	"createScripts" : ["/species/wr/jolteon.lua"],
+	"buildScripts" : ["/humanoid/opensb/build.lua","/humanoid/wr/build_pokemon.lua"],
+	"createScripts" : ["/species/wr/eon.lua"],
 	"humanoidOverrides" : {
 		"animation" : {
 			"animatedParts" : {
@@ -46,7 +46,7 @@
 					{
 						"particle" : {
 							"type" : "animated",
-							"animation" : "/animations/playerdeath-Wasabi_Raptor_PokemonDeath/quadruped/playerdeath.animation",
+							"animation" : "/animations/wr/pokemon/playerdeath/quadruped/playerdeath.animation",
 							"size" : 1,
 							"angularVelocity" : 0,
 							"fade" : 1,
@@ -93,11 +93,11 @@
 		"Fur Color", // body color
 		"Mane Color", // hair type
 		"Markings Color", // shirt
-		"Color Pattern", // pants
+		"Eye Color", // pants
 
 		"Hair Style", // alt option - undy color - facial mask
 		"Mane Style", // head option - hair color - facial hair
-		"-", // shirt color
+		"Color Pattern", // shirt color
 		"-", // pants color
 
 		"Jolteon", // species
@@ -111,10 +111,10 @@
 		"0",
 		""
 	],
-	"furColor": [
+	"primaryColor": [
 		"?replace;5a4b15=5a4b15;ab8c3f=ab8c3f;ccad50=ccad50;fee05d=fee05d;" // yellow (default)
 	],
-	"maneColor": [
+	"secondaryColor": [
 		"?replace;929292=929292;a7a7a7=a7a7a7;cbcbcb=cbcbcb;f0f0f0=f0f0f0;" // white (default)
 	],
 	"markingsColor": [
@@ -122,10 +122,16 @@
 		"?replace;afb3cd=a7a7a7;c8cbdf=cbcbcb;eef0ff=f0f0f0;", // match mane
 		"?replace;afb3cd=a6a6a6;c8cbdf=cacaca;eef0ff=efefef;" // white
 	],
+	"eyeColor" : [
+		""
+	],
 	"bellyColor": [
 		"?replace;c4afcd=ab8c3f;dac8df=ccad50;fbeeff=fee05d;", // match body (default)
 		"?replace;c4afcd=a7a7a7;dac8df=cbcbcb;fbeeff=f0f0f0;", // match mane
-		"?replace;c4afcd=afb3cd;dac8df=c8cbdf;fbeeff=eef0ff;" // match paws
+		"?replace;c4afcd=afb3cd;dac8df=c8cbdf;fbeeff=eef0ff;" // match markings
+	],
+	"hairColor" : [
+		""
 	],
 
 	"defaultBlueprints" : {

@@ -9,7 +9,7 @@
 	},
 	"respawnCasualCinematic" : "/cinematics/respawn/wr/pokemon/casual.cinematic",
 	"respawnSurvivalCinematic" : "/cinematics/respawn/wr/pokemon/survival.cinematic",
-	"fallbackShip" : "floran",
+	"fallbackShip" : "novakid",
 	"ships" : [
 		"/ships/wr/nickit_boat/structures/T0.structure",
 		"/ships/wr/nickit_boat/structures/T1.structure",
@@ -128,7 +128,7 @@
 	],
 
 	// These are the tables for the replace colors, if your sprites neeed to have their colors replaced, you should probably define those colors here
-	"furColor" : [ // primary
+	"primaryColor" : [ // primary
 		"?replace;853b21=853b22;9b482a=9b482b;b25938=b25939;", // default Red
 		"?replace;853b21=968d81;9b482a=a39a8f;b25938=b4aba0;" // shiny sandy grey
 	],

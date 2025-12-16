@@ -5,12 +5,10 @@ local function wrap(index, length, secondary, secondaryLength)
 	if not index then
 		index = math.floor(wrap(secondary, secondaryLength * length) / secondaryLength)
 	end
-	index = math.abs(index)
-	if index < length then return index end
-	return math.fmod(index, length)
+	return math.abs(index) % length
 end
-function create(name, species, genderIndex, primaryColor, earFinnColor, bellyColor, dorsalFinnColor, hairStyle, cheekStyle, maneColor, pantsColor, personality, ...)
-	-- these values are zero indexed!
+function create(name, species, genderIndex, primaryColor, hairStyle, secondaryColor, facialHairStyle, markingsColor, markingsPattern, eyeColorChoice, _8, personality, bellyColor, hairColor, eyeColor, gemColor, ...)
+	 -- these values are zero indexed!
 
 	local speciesConfig = root.speciesConfig(species)
 	local humanoidConfig = sb.jsonMerge(root.assetJson(speciesConfig.humanoidConfig or "/humanoid.config"), speciesConfig.humanoidOverrides or {})
@@ -19,24 +17,37 @@ function create(name, species, genderIndex, primaryColor, earFinnColor, bellyCol
 	genderIndex = wrap(genderIndex, #speciesConfig.genders)
 	local gender = speciesConfig.genders[genderIndex + 1]
 
-	primaryColor = wrap(primaryColor, #speciesConfig.bodyColor)
-	maneColor = wrap(maneColor, #speciesConfig.neckFinnColor)
-	hairStyle = wrap(hairStyle, #speciesConfig.hairStyle)
-	bellyColor = wrap(bellyColor, #speciesConfig.bellyColor)
-	dorsalFinnColor = wrap(dorsalFinnColor, #speciesConfig.dorsalFinnColor)
-	earFinnColor = wrap(earFinnColor, #speciesConfig.earFinnColor)
+	local hairGroup = gender.hairGroup or speciesConfig.hairGroup or "hair"
+	local hairOptions = gender[hairGroup.."Style"] or speciesConfig[hairGroup.."Style"]
 
-	cheekStyle = wrap(cheekStyle, #speciesConfig.cheekStyle)
+	local facialHairGroup = gender.facialHairGroup or speciesConfig.facialHairGroup or "mane"
+	local facialHairOptions = gender[facialHairGroup.."Style"] or speciesConfig[facialHairGroup.."Style"]
+
+
+	primaryColor = wrap(primaryColor, #speciesConfig.primaryColor)
+	secondaryColor = wrap(secondaryColor, #speciesConfig.secondaryColor)
+	eyeColor = wrap(eyeColor or eyeColorChoice, #speciesConfig.eyeColor)
+	gemColor = wrap(gemColor, #speciesConfig.gemColor, eyeColorChoice, #speciesConfig.eyeColor)
+	markingsColor = wrap(markingsColor, #speciesConfig.markingsColor)
+
+
+	hairStyle = wrap(hairStyle, #hairOptions)
+	facialHairStyle = wrap(facialHairStyle, #facialHairOptions)
+	bellyColor = wrap(bellyColor or markingsPattern, #speciesConfig.bellyColor)
+	hairColor = wrap(hairColor, #speciesConfig.hairColor, markingsPattern, #speciesConfig.bellyColor)
+
 
 	personality = wrap(personality, #humanoidConfig.personalities)
 
 	local directives = ""
 
-	directives = directives .. (speciesConfig.neckFinnColor[maneColor + 1])
-	directives = directives .. (speciesConfig.earFinnColor[earFinnColor + 1])
 	directives = directives .. (speciesConfig.bellyColor[bellyColor + 1])
-	directives = directives .. (speciesConfig.bodyColor[primaryColor + 1])
-	directives = directives .. (speciesConfig.dorsalFinnColor[dorsalFinnColor + 1])
+	directives = directives .. (speciesConfig.hairColor[hairColor + 1])
+
+	directives = directives .. (speciesConfig.primaryColor[primaryColor + 1])
+	directives = directives .. (speciesConfig.secondaryColor[secondaryColor + 1])
+	directives = directives .. (speciesConfig.eyeColor[eyeColor + 1])
+	directives = directives .. (speciesConfig.markingsColor[markingsColor + 1])
 
 
 	local personalityIdle, personalityArmIdle, personalityHeadOffset, personalityArmOffset = table.unpack(humanoidConfig.personalities[personality+1])
@@ -45,13 +56,13 @@ function create(name, species, genderIndex, primaryColor, earFinnColor, bellyCol
 		name = name,
 		species = species,
 		gender = gender.name,
-		hairGroup = "hair",
-		hairType = speciesConfig.hairStyle[hairStyle+1],
+		hairGroup = hairGroup,
+		hairType = hairOptions[hairStyle+1],
 		hairDirectives = directives,
 		bodyDirectives = directives,
 		emoteDirectives = directives,
-		facialHairGroup = "cheeks",
-		facialHairType = speciesConfig.cheekStyle[cheekStyle+1],
+		facialHairGroup = facialHairGroup,
+		facialHairType = facialHairOptions[facialHairStyle+1],
 		facialHairDirectives = directives,
 		facialMaskGroup = "",
 		facialMaskType = "",
@@ -63,7 +74,7 @@ function create(name, species, genderIndex, primaryColor, earFinnColor, bellyCol
 		color = {51, 117, 237, 255},
 	}
 	local parameters = {
-		choices = { genderIndex, primaryColor, earFinnColor, bellyColor, dorsalFinnColor, hairStyle, cheekStyle, maneColor, pantsColor, personality, ... },
+		choices = { genderIndex, primaryColor, hairStyle, secondaryColor, facialHairStyle, markingsColor, markingsPattern, eyeColorChoice, _8, personality, ... },
 		--this you can do a lot with, see the humanoid build script
 	}
 	local armor = {

@@ -137,7 +137,7 @@
 		"?replace;732000=c26806;bd4a29=db8806;de7329=ffb408;", // shiny gen2 inspired gold
 		"?replace;732000=833900;bd4a29=d58318;de7329=f6c500;" // shiny yellow-orange
 	],
-	"furColor" : [ // primary
+	"primaryColor" : [ // primary
 		"?replace;ad664e=ad664e;bd735a=bd735a;e6946a=e6946a;", // default brownish orange
 		"?replace;ad664e=cc643b;bd735a=e67e43;e6946a=ff944a;", // default gen2 orange
 		"?replace;ad664e=996347;bd735a=b87e60;e6946a=cd9171;", // default gen6 brown
@@ -162,7 +162,7 @@
 		"?replace;e6c57b=b88822;ffde94=d8c067;ffe6b4=fff7a0;", // default PMD cream
 		"?replace;e6c57b=d6caa1;ffde94=ebe2c5;ffe6b4=fff8e1;", // shiny gen2 white-gold
 		"?replace;e6c57b=dbca6f;ffde94=ebd981;ffe6b4=f6e694;", // shiny yellow-y cream
-		"?replace;e6c57b=ad664e;ffde94=bd735a;ffe6b4=e6946a;" // bellyColor
+		"?replace;e6c57b=ad664e;ffde94=bd735a;ffe6b4=e6946a;" // match fur
 	],
 	"eyeColor" : [  // eyes
 		"?replace;291600=291600FE;ffffff=ffffffFE;", // default dark brown
@@ -172,13 +172,13 @@
 		"?replace;291600=2e3318FE;ffffff=ffffffFE;" // shiny dark green
 	],
 	"markingsColor" : [
-		"?replace;ad4e4e=ad664e;bd5a5a=bd735a;e66a6a=e6946a;", // furColor
+		"?replace;ad4e4e=ad664e;bd5a5a=bd735a;e66a6a=e6946a;", // primaryColor
 		"?replace;ad4e4e=e6c57b;bd5a5a=ffde94;e66a6a=ffe6b4;", // bellyColor
 		"?replace;ad4e4e=472700;bd5a5a=5a3100;e66a6a=835231;", // pawsColor
 		"?replace;ad4e4e=732000;bd5a5a=bd4a29;e66a6a=de7329;" // hairColor
 	],
 	"tailMarkingsColor" : [
-		"?replace;910d00=ad664e;b91000=bd735a;e21400=e6946a;", // furColor
+		"?replace;910d00=ad664e;b91000=bd735a;e21400=e6946a;", // primaryColor
 		"?replace;910d00=e6c57b;b91000=ffde94;e21400=ffe6b4;", // bellyColor
 		"?replace;910d00=472700;b91000=5a3100;e21400=835231;", // pawsColor
 		"?replace;910d00=732000;b91000=bd4a29;e21400=de7329;" // hairColor

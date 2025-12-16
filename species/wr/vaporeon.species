@@ -82,6 +82,93 @@
 
 
 	"skull" : "/humanoid/human/dead.png",
+	"genders" : [
+		{
+			"name" : "male",
+			"image" : "/interface/title/male.png",
+			"characterImage" : "/humanoid/wr/vaporeon/icon.png"
+		},
+		{
+			"name" : "female",
+			"image" : "/interface/title/female.png",
+			"characterImage" : "/humanoid/wr/vaporeon/icon.png"
+		}
+	],
+	"baseColorPalette" : {
+		"primary" : ["0d4f6a", "1b80a7", "42b2dd", "6dc4e5"], // main body // 072734 for nose
+		"secondary" : ["0b2e67", "194893", "2d66c3"], // dorsal fins
+		"tertiary" : ["8a8a8a", "b3b3b3", "e0e0e0", "fefefe"], // belly
+		"earFins" : ["786c31", "b1a14e", "dcca6b", "f2eab4", "fdf9e3"],
+		"neckFins" : ["a34c9a", "cc72c3", "ef99e7", "ffcfe9", "fae2ef"],
+		"flesh" : ["7a235a", "99457a", "a2668c"],
+		"nose" : ["072734"]
+	},
+	"charGenTextLabels": [
+		"Primary Color", // body color
+		"Belly Color", // hair type
+		"Head Finn Style", // shirt
+		"Neck Finn Color", // pants
+
+		"Ear Finn Color", // alt option - undy color - facial mask
+		"Dorsal Finn Color", // head option - hair color - facial hair
+		"Neck Finn Style", // shirt color
+		"-", // pants color
+		"Vaporeon", // species
+		"Personality" // personality
+	],
+	"neckFinnStyle": [
+		"0",
+		""
+	],
+	"headFinnStyle": [
+		"0"
+	],
+	"bodyColor": [
+		"?replace;072734=072734;0d4f6a=0d4f6a;1b80a7=1b80a7;42b2dd=42b2dd;6dc4e5=6dc4e5;", // light blue (default)
+		"?replace;072734=416fb4;0d4f6a=5584cb;1b80a7=6999e2;42b2dd=84b5ff;6dc4e5=b9d5ff;", // blue (gen2 light)
+		"?replace;072734=16218b;0d4f6a=2631a2;1b80a7=2b38c5;42b2dd=4a5aff;6dc4e5=5c79ff;", // blue (gen2 dark)
+		"?replace;072734=106850;0d4f6a=38a088;1b80a7=60c8b0;42b2dd=80e8d0;6dc4e5=aaf9e7;", // teal (gen3)
+		"?replace;072734=0e4a63;0d4f6a=2d7f9c;1b80a7=419cbd;42b2dd=5ac5e6;6dc4e5=83deff;", // light blue (gen5)
+
+		"?replace;072734=9659bf;0d4f6a=a86dd1;1b80a7=c28ae8;42b2dd=deadff;6dc4e5=eacbff;", // purple (gen2 shiny light)
+		"?replace;072734=482785;0d4f6a=543097;1b80a7=633da8;42b2dd=7b52c5;6dc4e5=986fe2;", // purple (gen2 shiny dark)
+		"?replace;072734=784088;0d4f6a=b880c0;1b80a7=e0a8e0;42b2dd=f8c0f0;6dc4e5=ffdafa;", // magenta (gen3 shiny)
+		"?replace;072734=6e184b;0d4f6a=bd62d5;1b80a7=e694e6;42b2dd=ffbdff;6dc4e5=f9c7f9;" // magenta (gen5 shiny)
+	],
+	"neckFinnColor": [
+		"?replace;a34c9a=545454;cc72c3=8a8a8a;ef99e7=b3b3b3;ffcfe9=e0e0e0;fae2ef=fefefe;", // white (default)
+		"?replace;a34c9a=84b5ff;cc72c3=b9d5ff;ef99e7=e9f2ff;ffcfe9=fefefe;fae2ef=fefefe;", // bluish white (gen2)
+		"?replace;a34c9a=585870;cc72c3=8f8fb4;ef99e7=a8a8c8;ffcfe9=e0e0e0;fae2ef=f8f8f8;", // white (gen3)
+		"?replace;a34c9a=686868;cc72c3=8b8b8b;ef99e7=cdcdcd;ffcfe9=e8e8e8;fae2ef=f8f8f8;", // white (gen5)
+
+		"?replace;a34c9a=deadff;cc72c3=eacbff;ef99e7=f3e1ff;ffcfe9=fefefe;fae2ef=fefefe;" // purplish white (gen2 shiny)
+	],
+	"earFinnColor": [ // ear fins
+		"?replace;786c31=786c31;b1a14e=b1a14e;dcca6b=dcca6b;f2eab4=f2eab4;fdf9e3=fdf9e3;", // yellow (default)
+		"?replace;786c31=84b5ff;b1a14e=b9d5ff;dcca6b=e9f2ff;f2eab4=fefefe;fdf9e3=fefefe;", // bluish white (gen2)
+		"?replace;786c31=887828;b1a14e=c59d2e;dcca6b=e0b848;f2eab4=f8e878;fdf9e3=fff298;", // yellow (gen3)
+		"?replace;786c31=6a6220;b1a14e=a29347;dcca6b=bdac5a;f2eab4=ffe6a4;fdf9e3=ffefc4;", // yellow (gen5)
+
+		"?replace;786c31=deadff;b1a14e=eacbff;dcca6b=f3e1ff;f2eab4=fefefe;fdf9e3=fefefe;" // purplish white (gen2 shiny)
+	],
+	"dorsalFinnColor": [
+		"?replace;0b2e67=0b2e67;194893=194893;2d66c3=2d66c3;", // dark blue (default)
+		"?replace;0b2e67=030623;194893=040c51;2d66c3=000c74;", // bluish black (gen2)
+		"?replace;0b2e67=1a2651;194893=304078;2d66c3=587098;", // dark blue (gen3)
+		"?replace;0b2e67=104a62;194893=107394;2d66c3=1b85a8;", // dark teal (gen5)
+
+		"?replace;0b2e67=1e1134;194893=2d1951;2d66c3=381268;", // purplish black (gen2 shiny)
+		"?replace;0b2e67=5d203b;194893=803858;2d66c3=b07098;", // dark magenta (gen3 shiny)
+		"?replace;0b2e67=621041;194893=83395a;2d66c3=914768;" // dark magenta (gen5 shiny)
+	],
+	"bellyColor": [ // underbelly
+		"?replace;545454=072734;8a8a8a=0d4f6a;b3b3b3=1b80a7;e0e0e0=42b2dd;fefefe=6dc4e5;", // match body
+		"?replace;545454=a34c9a;8a8a8a=cc72c3;b3b3b3=ef99e7;e0e0e0=ffcfe9;fefefe=fae2ef;", // match neck finn
+		"?replace;545454=786c31;8a8a8a=b1a14e;b3b3b3=dcca6b;e0e0e0=f2eab4;fefefe=fdf9e3;" // match ears
+	],
+
+	"potionImagePath" : "/humanoid/wr/vaporeon/potion/",
+
 	"defaultBlueprints" : {
 		"tier1" : [
 
@@ -152,9 +239,9 @@
 			{ "item" : "violiumbroadsword" },
 
 // Furniture Table 2
-			{ "item" : "humanstoragelocker" },
-			{ "item" : "humanshipdoor" },
-			{ "item" : "humanshiphatch" },
+			{ "item" : "novakidstoragelocker" },
+			{ "item" : "novakidshipdoor" },
+			{ "item" : "novakidshiphatch" },
 
 			// Spinning Wheel
 			{ "item" : "wr/pokemonPrideSocksChest" },
@@ -168,92 +255,5 @@
 			{ "item" : "wr/pokemonStripedSocksCChest" },
 			{ "item" : "wr/pokemonStripedSocksCLegs" }
 		]
-	},
-	"genders" : [
-		{
-			"name" : "male",
-			"image" : "/interface/title/male.png",
-			"characterImage" : "/humanoid/wr/vaporeon/icon.png"
-		},
-		{
-			"name" : "female",
-			"image" : "/interface/title/female.png",
-			"characterImage" : "/humanoid/wr/vaporeon/icon.png"
-		}
-	],
-	"baseColorPalette" : {
-		"primary" : ["0d4f6a", "1b80a7", "42b2dd", "6dc4e5"], // main body // 072734 for nose
-		"secondary" : ["0b2e67", "194893", "2d66c3"], // dorsal fins
-		"tertiary" : ["8a8a8a", "b3b3b3", "e0e0e0", "fefefe"], // belly
-		"earFins" : ["786c31", "b1a14e", "dcca6b", "f2eab4", "fdf9e3"],
-		"neckFins" : ["a34c9a", "cc72c3", "ef99e7", "ffcfe9", "fae2ef"],
-		"flesh" : ["7a235a", "99457a", "a2668c"],
-		"nose" : ["072734"]
-	},
-	"charGenTextLabels": [
-		"Primary Color", // body color
-		"Belly Color", // hair type
-		"Head Finn Style", // shirt
-		"Neck Finn Color", // pants
-
-		"Ear Finn Color", // alt option - undy color - facial mask
-		"Dorsal Finn Color", // head option - hair color - facial hair
-		"Neck Finn Style", // shirt color
-		"-", // pants color
-		"Vaporeon", // species
-		"Personality" // personality
-	],
-	"neckFinnStyle": [
-		"0",
-		""
-	],
-	"headFinnStyle": [
-		"0"
-	],
-	"bodyColor": [
-		"?replace;072734=072734;0d4f6a=0d4f6a;1b80a7=1b80a7;42b2dd=42b2dd;6dc4e5=6dc4e5;", // light blue (default)
-		"?replace;072734=416fb4;0d4f6a=5584cb;1b80a7=6999e2;42b2dd=84b5ff;6dc4e5=b9d5ff;", // blue (gen2 light)
-		"?replace;072734=16218b;0d4f6a=2631a2;1b80a7=2b38c5;42b2dd=4a5aff;6dc4e5=5c79ff;", // blue (gen2 dark)
-		"?replace;072734=106850;0d4f6a=38a088;1b80a7=60c8b0;42b2dd=80e8d0;6dc4e5=aaf9e7;", // teal (gen3)
-		"?replace;072734=0e4a63;0d4f6a=2d7f9c;1b80a7=419cbd;42b2dd=5ac5e6;6dc4e5=83deff;", // light blue (gen5)
-
-		"?replace;072734=9659bf;0d4f6a=a86dd1;1b80a7=c28ae8;42b2dd=deadff;6dc4e5=eacbff;", // purple (gen2 shiny light)
-		"?replace;072734=482785;0d4f6a=543097;1b80a7=633da8;42b2dd=7b52c5;6dc4e5=986fe2;", // purple (gen2 shiny dark)
-		"?replace;072734=784088;0d4f6a=b880c0;1b80a7=e0a8e0;42b2dd=f8c0f0;6dc4e5=ffdafa;", // magenta (gen3 shiny)
-		"?replace;072734=6e184b;0d4f6a=bd62d5;1b80a7=e694e6;42b2dd=ffbdff;6dc4e5=f9c7f9;" // magenta (gen5 shiny)
-	],
-	"earFinnColor": [ // ear fins
-		"?replace;786c31=786c31;b1a14e=b1a14e;dcca6b=dcca6b;f2eab4=f2eab4;fdf9e3=fdf9e3;", // yellow (default)
-		"?replace;786c31=84b5ff;b1a14e=b9d5ff;dcca6b=e9f2ff;f2eab4=fefefe;fdf9e3=fefefe;", // bluish white (gen2)
-		"?replace;786c31=887828;b1a14e=c59d2e;dcca6b=e0b848;f2eab4=f8e878;fdf9e3=fff298;", // yellow (gen3)
-		"?replace;786c31=6a6220;b1a14e=a29347;dcca6b=bdac5a;f2eab4=ffe6a4;fdf9e3=ffefc4;", // yellow (gen5)
-
-		"?replace;786c31=deadff;b1a14e=eacbff;dcca6b=f3e1ff;f2eab4=fefefe;fdf9e3=fefefe;" // purplish white (gen2 shiny)
-	],
-	"bellyColor": [ // underbelly
-		"?replace;545454=545454;8a8a8a=8a8a8a;b3b3b3=b3b3b3;e0e0e0=e0e0e0;fefefe=fefefe;", // white (default)
-		"?replace;545454=84b5ff;8a8a8a=b9d5ff;b3b3b3=e9f2ff;e0e0e0=fefefe;fefefe=fefefe;", // bluish white (gen2)
-		"?replace;545454=585870;8a8a8a=8f8fb4;b3b3b3=a8a8c8;e0e0e0=e0e0e0;fefefe=f8f8f8;", // white (gen3)
-		"?replace;545454=686868;8a8a8a=8b8b8b;b3b3b3=cdcdcd;e0e0e0=e8e8e8;fefefe=f8f8f8;", // white (gen5)
-
-		"?replace;545454=deadff;8a8a8a=eacbff;b3b3b3=f3e1ff;e0e0e0=fefefe;fefefe=fefefe;" // purplish white (gen2 shiny)
-	],
-	"dorsalFinnColor": [
-		"?replace;0b2e67=0b2e67;194893=194893;2d66c3=2d66c3;", // dark blue (default)
-		"?replace;0b2e67=030623;194893=040c51;2d66c3=000c74;", // bluish black (gen2)
-		"?replace;0b2e67=1a2651;194893=304078;2d66c3=587098;", // dark blue (gen3)
-		"?replace;0b2e67=104a62;194893=107394;2d66c3=1b85a8;", // dark teal (gen5)
-
-		"?replace;0b2e67=1e1134;194893=2d1951;2d66c3=381268;", // purplish black (gen2 shiny)
-		"?replace;0b2e67=5d203b;194893=803858;2d66c3=b07098;", // dark magenta (gen3 shiny)
-		"?replace;0b2e67=621041;194893=83395a;2d66c3=914768;" // dark magenta (gen5 shiny)
-	],
-
-
-	"neckFinnColor": [
-		"?replace;a34c9a=545454;cc72c3=8a8a8a;ef99e7=b3b3b3;ffcfe9=e0e0e0;fae2ef=fefefe;", // match belly
-		"?replace;a34c9a=786c31;cc72c3=b1a14e;ef99e7=dcca6b;ffcfe9=f2eab4;fae2ef=fdf9e3;" // match ears
-	],
-
-	"potionImagePath" : "/humanoid/wr/vaporeon/potion/"
+	}
 }

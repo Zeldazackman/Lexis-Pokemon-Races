@@ -39,7 +39,7 @@
 
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
 	"buildScripts" : ["/humanoid/opensb/build.lua","/humanoid/wr/build_pokemon.lua"],
-	"createScripts" : ["/species/wr/flareon.lua"],
+	"createScripts" : ["/species/wr/eon.lua"],
 	"humanoidOverrides" : {
 		"animation" : {
 			"animatedParts" : {
@@ -93,11 +93,11 @@
 		"Fur Color", // body color
 		"Mane Color", // hair type
 		"Markings Color", // shirt
-		"Color Pattern", // pants
+		"Eye Color", // pants
 
 		"Hair Style", // alt option - undy color - facial mask
 		"Mane Style", // head option - hair color - facial hair
-		"-", // shirt color
+		"Color Pattern", // shirt color
 		"-", // pants color
 
 		"Flareon", // species
@@ -132,14 +132,14 @@
 		""
 	],
 	// These are the tables for the replace colors, if your sprites neeed to have their colors replaced, you should probably define those colors here
-	"furColor": [
+	"primaryColor": [
 		"?replace;b6552c=b6552c;cc663a=cc663a;e87c4c=e87c4c", // default / orange
 		"?replace;b6552c=967129;cc663a=ab8438;e87c4c=bd9441", // shiny / brown
 		"?replace;b6552c=802020;cc663a=d06000;e87c4c=f88800", // orange / gen3
 		"?replace;b6552c=732119;cc663a=d64252;e87c4c=f7734a", // red / gen5
 		"?replace;b6552c=6d1100;cc663a=ad2910;e87c4c=ff5208" // red / gen2
 	],
-	"maneColor": [
+	"secondaryColor": [
 		"?replace;beab5a=beab5a;dcc97d=dcc97d;f8e8a1=f8e8a1", // default / pale yellow
 		"?replace;beab5a=beb552;dcc97d=d7ce6b;f8e8a1=f4ec89", // shiny / also yellow
 		"?replace;beab5a=a06800;dcc97d=e8c808;f8e8a1=f8f838", // yellow / gen3
@@ -159,10 +159,16 @@
 		"?replace;afb3cd=c5a56b;c8cbdf=debd8c;eef0ff=ffefa5", // pale yellow / gen5
 		"?replace;afb3cd=c17c60;c8cbdf=ffd4c1;eef0ff=ffe9e0" // white /red / gen2
 	],
+	"eyeColor" : [
+		""
+	],
 	"bellyColor": [
 		"?replace;c4afcd=b6552c;dac8df=cc663a;fbeeff=e87c4c;", // match body (default)
 		"?replace;c4afcd=beab5a;dac8df=dcc97d;fbeeff=f8e8a1;", // match mane
-		"?replace;c4afcd=afb3cd;dac8df=c8cbdf;fbeeff=eef0ff;" // match paws
+		"?replace;c4afcd=afb3cd;dac8df=c8cbdf;fbeeff=eef0ff;" // match markings
+	],
+	"hairColor" : [
+		""
 	],
 
 

@@ -32,9 +32,9 @@ function create(name, species, genderIndex, primaryColor, earFinnColor, bellyCol
 
 	local directives = ""
 
+	directives = directives .. (speciesConfig.bellyColor[bellyColor + 1])
 	directives = directives .. (speciesConfig.neckFinnColor[neckFinnColor + 1])
 	directives = directives .. (speciesConfig.earFinnColor[earFinnColor + 1])
-	directives = directives .. (speciesConfig.bellyColor[bellyColor + 1])
 	directives = directives .. (speciesConfig.bodyColor[primaryColor + 1])
 	directives = directives .. (speciesConfig.dorsalFinnColor[dorsalFinnColor + 1])
 

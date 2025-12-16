@@ -23,8 +23,8 @@
 
 	"statusEffects" : [ { "stat":"breathProtection", "amount":1} ],
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
-	"buildScripts" : ["/humanoid/opensb/build.lua"],
-	"createScripts" : ["/species/wr/umbreon.lua"],
+	"buildScripts" : ["/humanoid/opensb/build.lua","/humanoid/wr/build_pokemon.lua"],
+	"createScripts" : ["/species/wr/eon.lua"],
 	"humanoidOverrides" : {
 		"particleEmitters": {
 			"deathPoof" : {
@@ -32,7 +32,7 @@
 					{
 						"particle" : {
 							"type" : "animated",
-							"animation" : "/animations/playerdeath-Wasabi_Raptor_PokemonDeath/quadruped/playerdeath.animation",
+							"animation" : "/animations/wr/pokemon/playerdeath/quadruped/playerdeath.animation",
 							"size" : 1,
 							"angularVelocity" : 0,
 							"fade" : 1,
@@ -54,37 +54,106 @@
 
 	"skull" : "/humanoid/human/dead.png",
 	"effectDirectives" : "?replace;FEFFFFFF=FFFFFFFF;9bd4ffFF=80b3ffFF;31a6ffFF=5476f0FF",
+	"genders" : [
+		{
+			"name" : "male",
+			"image" : "/interface/title/male.png",
+			"characterImage" : "/humanoid/wr/umbreon/icon.png"
+		},
+		{
+			"name" : "female",
+			"image" : "/interface/title/female.png",
+			"characterImage" : "/humanoid/wr/umbreon/icon.png"
+		}
+	],
+	"baseColorPalette" : {
+		"primary" : ["161c33", "293049", "414151"], // main body // 000000 for nose
+		"secondary" : ["685b00", "b39532", "edd75c"], // rings
+		"tertiary" : ["afb3cd","c8cbdf","eef0ff"], // paws / markings
+		"belly" : ["c4afcd", "dac8df", "fbeeff"],
+
+		"flesh" : ["685b00", "b39532", "edd75c"],
+		"nose" : ["000000"]
+	},
+	"charGenTextLabels": [
+		"Fur Color", // body color
+		"Ring Color", // hair type
+		"Markings Color", // shirt
+		"Color Pattern", // pants
+
+		"Hair Style", // alt option - undy color - facial mask
+		"Fluff Style", // head option - hair color - facial hair
+		"Eye Color", // shirt color
+		"-", // pants color
+		"Umbreon", // species
+		"Personality" // personality
+	],
+	"facialHairGroup" : "fluff",
+	"fluffStyle": [
+		""
+	],
+	"hairStyle": [
+		""
+	],
+	"primaryColor": [
+		"?replace;000000=000000;161c33=161c33;293049=293049;414151=414151;" // black (default)
+	],
+	"secondaryColor": [
+		"?replace;685b00=685b00FE;b39532=b39532FE;edd75c=edd75cFE;" // yellow (default)
+	],
+	"markingsColor": [
+		"?replace;afb3cd=161c33;c8cbdf=293049;eef0ff=414151;" // match body
+	],
+	"eyeColor" : [
+		"?replace;692010=692010FE;aa4049=aa4049FE;170602=170602FE;230a04=230a04FE"
+	],
+	"bellyColor": [
+		"?replace;c4afcd=161c33;dac8df=293049;fbeeff=fee05d;", // match body (default)
+		"?replace;c4afcd=afb3cd;dac8df=c8cbdf;fbeeff=eef0ff;" // match markings
+	],
+	"hairColor" : [
+		""
+	],
+
 	"defaultBlueprints" : {
 		"tier1" : [
 
-// Empty Hands
+			// Empty Hands
 			{ "item" : "flaghuman" },
 
-// Anvil
-			{ "item" : "humantier1head" },
-			{ "item" : "humantier1chest" },
-			{ "item" : "humantier1pants" },
-			{ "item" : "humantier2head" },
-			{ "item" : "humantier2chest" },
-			{ "item" : "humantier2pants" },
+			// Anvil
+			{ "item" : "wr/pokemonTier1Head" },
+			{ "item" : "wr/pokemonTier1Chest" },
+			{ "item" : "wr/pokemonTier1Legs" },
+			{ "item" : "wr/pokemonTier2Head" },
+			{ "item" : "wr/pokemonTier2Chest" },
+			{ "item" : "wr/pokemonTier2Legs" },
 
 			{ "item" : "ironshortsword" },
 			{ "item" : "ironbroadsword" },
 			{ "item" : "tungstenaxe" },
 			{ "item" : "tungstenhammer" },
+			{ "item" : "ironrevolver" },
+			{ "item" : "ironassaultrifle" },
+			{ "item" : "tungstenmagnum" },
+			{ "item" : "tungstenshotgun" },
 
-// Anvil2
-			{ "item" : "humantier3head" },
-			{ "item" : "humantier3chest" },
-			{ "item" : "humantier3pants" },
-			{ "item" : "humantier4head" },
-			{ "item" : "humantier4chest" },
-			{ "item" : "humantier4pants" },
+			// Anvil2
+			{ "item" : "wr/pokemonTier3Head" },
+			{ "item" : "wr/pokemonTier3Chest" },
+			{ "item" : "wr/pokemonTier3Legs" },
+			{ "item" : "wr/pokemonTier4Head" },
+			{ "item" : "wr/pokemonTier4Chest" },
+			{ "item" : "wr/pokemonTier4Legs" },
 
 			{ "item" : "titaniumdagger" },
 			{ "item" : "titaniumspear" },
 			{ "item" : "durasteelbroadsword" },
 			{ "item" : "durasteelshortsword" },
+			{ "item" : "titaniummachinepistol" },
+			{ "item" : "titaniumsniperrifle" },
+			{ "item" : "durasteelrevolver" },
+			{ "item" : "durasteelassaultrifle" },
 
 // Anvil3
 			{ "item" : "humantier5ahead" },
@@ -116,100 +185,21 @@
 			{ "item" : "violiumbroadsword" },
 
 // Furniture Table 2
-			{ "item" : "humanstoragelocker" },
-			{ "item" : "humanshipdoor" },
-			{ "item" : "humanshiphatch" },
+			{ "item" : "novakidstoragelocker" },
+			{ "item" : "novakidshipdoor" },
+			{ "item" : "novakidshiphatch" },
 
-// Spinning Wheel
-			{ "item" : "conceptchest" },
-			{ "item" : "conceptlegs" },
-			{ "item" : "coolchest" },
-			{ "item" : "coollegs" },
-			{ "item" : "sweatervestchest" },
-			{ "item" : "sweatervestlegs" },
-			{ "item" : "workoutchest" },
-			{ "item" : "workoutlegs" }
+			// Spinning Wheel
+			{ "item" : "wr/pokemonPrideSocksChest" },
+			{ "item" : "wr/pokemonPrideSocksLegs" },
+			{ "item" : "wr/pokemonSocksChest" },
+			{ "item" : "wr/pokemonSocksLegs" },
+			{ "item" : "wr/pokemonStripedSocksAChest" },
+			{ "item" : "wr/pokemonStripedSocksALegs" },
+			{ "item" : "wr/pokemonStripedSocksBChest" },
+			{ "item" : "wr/pokemonStripedSocksBLegs" },
+			{ "item" : "wr/pokemonStripedSocksCChest" },
+			{ "item" : "wr/pokemonStripedSocksCLegs" }
 		]
-	},
-	"genders" : [
-		{
-			"name" : "male",
-			"image" : "/interface/title/male.png",
-			"characterImage" : "/humanoid/wr/umbreon/icon.png"
-		},
-		{
-			"name" : "female",
-			"image" : "/interface/title/female.png",
-			"characterImage" : "/humanoid/wr/umbreon/icon.png"
-		}
-	],
-	"baseColorPalette" : {
-		"primary" : ["0d4f6a", "1b80a7", "42b2dd", "6dc4e5"], // main body // 072734 for nose
-		"secondary" : ["0b2e67", "194893", "2d66c3"], // dorsal fins
-		"tertiary" : ["8a8a8a", "b3b3b3", "e0e0e0", "fefefe"], // belly
-		"earFins" : ["786c31", "b1a14e", "dcca6b", "f2eab4", "fdf9e3"],
-		"neckFins" : ["a34c9a", "cc72c3", "ef99e7", "ffcfe9", "fae2ef"],
-		"flesh" : ["7a235a", "99457a", "a2668c"],
-		"nose" : ["072734"]
-	},
-	"charGenTextLabels": [
-		"Primary Color", // body color
-		"Belly Color", // hair type
-		"-", // shirt
-		"-", // pants
-
-		"Ear Finn Color", // alt option - undy color - facial mask
-		"Dorsal Finn Color", // head option - hair color - facial hair
-		"Cheek Style", // shirt color
-		"-", // pants color
-		"Umbreon", // species
-		"Personality" // personality
-	],
-	"cheekStyle": [
-		"0",
-		""
-	],
-	"hairStyle": [
-		""
-	],
-	"bodyColor": [
-		"?replace;072734=072734;0d4f6a=0d4f6a;1b80a7=1b80a7;42b2dd=42b2dd;6dc4e5=6dc4e5;", // light blue (default)
-		"?replace;072734=16218b;0d4f6a=2b38c5;1b80a7=4a5aff;42b2dd=84b5ff;6dc4e5=b9d5ff;", // blue (gen2)
-		"?replace;072734=106850;0d4f6a=38a088;1b80a7=60c8b0;42b2dd=80e8d0;6dc4e5=aaf9e7;", // teal (gen3)
-		"?replace;072734=0e4a63;0d4f6a=2d7f9c;1b80a7=419cbd;42b2dd=5ac5e6;6dc4e5=83deff;", // light blue (gen5)
-
-		"?replace;072734=482785;0d4f6a=633da8;1b80a7=7b52c5;42b2dd=deadff;6dc4e5=eacbff;", // purple (gen2 shiny)
-		"?replace;072734=784088;0d4f6a=b880c0;1b80a7=e0a8e0;42b2dd=f8c0f0;6dc4e5=ffdafa;", // magenta (gen3 shiny)
-		"?replace;072734=6e184b;0d4f6a=bd62d5;1b80a7=e694e6;42b2dd=ffbdff;6dc4e5=f9c7f9;" // magenta (gen5 shiny)
-	],
-	"earFinnColor": [ // ear fins
-		"?replace;786c31=786c31;b1a14e=b1a14e;dcca6b=dcca6b;f2eab4=f2eab4;fdf9e3=fdf9e3;", // yellow (default)
-		"?replace;786c31=4a7bc5;b1a14e=84b5ff;dcca6b=b9d5ff;f2eab4=e9f2ff;fdf9e3=fefefe;", // bluish white (gen2)
-		"?replace;786c31=887828;b1a14e=c59d2e;dcca6b=e0b848;f2eab4=f8e878;fdf9e3=fff298;", // yellow (gen3)
-		"?replace;786c31=6a6220;b1a14e=a29347;dcca6b=bdac5a;f2eab4=ffe6a4;fdf9e3=ffefc4;", // yellow (gen5)
-
-		"?replace;786c31=c590e8;b1a14e=deadff;dcca6b=eacbff;f2eab4=f3e1ff;fdf9e3=fefefe;" // purplish white (gen2 shiny)
-	],
-	"bellyColor": [ // underbelly
-		"?replace;545454=545454;8a8a8a=8a8a8a;b3b3b3=b3b3b3;e0e0e0=e0e0e0;fefefe=fefefe;", // white (default)
-		"?replace;545454=4a7bc5;8a8a8a=4a7bc5;b3b3b3=b9d5ff;e0e0e0=e9f2ff;fefefe=fefefe;", // bluish white (gen2)
-		"?replace;545454=585870;8a8a8a=8f8fb4;b3b3b3=a8a8c8;e0e0e0=e0e0e0;fefefe=f8f8f8;", // white (gen3)
-		"?replace;545454=686868;8a8a8a=8b8b8b;b3b3b3=cdcdcd;e0e0e0=e8e8e8;fefefe=f8f8f8;", // white (gen5)
-
-		"?replace;545454=c590e8;8a8a8a=deadff;b3b3b3=eacbff;e0e0e0=f3e1ff;fefefe=fefefe;" // purplish white (gen2 shiny)
-	],
-	"dorsalFinnColor": [
-		"?replace;0b2e67=0b2e67;194893=194893;2d66c3=2d66c3;", // dark blue (default)
-		"?replace;0b2e67=030623;194893=040c51;2d66c3=000c74;", // bluish black (gen2)
-		"?replace;0b2e67=1a2651;194893=304078;2d66c3=587098;", // dark blue (gen3)
-		"?replace;0b2e67=104a62;194893=107394;2d66c3=1b85a8;", // dark teal (gen5)
-
-		"?replace;0b2e67=1e1134;194893=2d1951;2d66c3=381268;", // purplish black (gen2 shiny)
-		"?replace;0b2e67=5d203b;194893=803858;2d66c3=b07098;", // dark magenta (gen3 shiny)
-		"?replace;0b2e67=621041;194893=83395a;2d66c3=914768;" // dark magenta (gen5 shiny)
-	],
-	"neckFinnColor": [
-		"?replace;a34c9a=545454;cc72c3=8a8a8a;ef99e7=b3b3b3;ffcfe9=e0e0e0;fae2ef=fefefe;", // match belly
-		"?replace;a34c9a=786c31;cc72c3=b1a14e;ef99e7=dcca6b;ffcfe9=f2eab4;fae2ef=fdf9e3;" // match ears
-	]
+	}
 }

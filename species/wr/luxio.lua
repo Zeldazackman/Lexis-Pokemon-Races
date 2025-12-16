@@ -9,7 +9,7 @@ local function wrap(index, length, secondary, secondaryLength)
 	if index < length then return index end
 	return math.fmod(index, length)
 end
-function create(name, species, genderIndex, furColor, fluffColor, eyeColor, fluffStyle, earColor, shirtColor, pantsChoice, pantsColor, personality, ...)
+function create(name, species, genderIndex, primaryColor, fluffColor, eyeColor, fluffStyle, earColor, shirtColor, pantsChoice, pantsColor, personality, ...)
 	-- these values are zero indexed!
 
 	local speciesConfig = root.speciesConfig(species)
@@ -19,7 +19,7 @@ function create(name, species, genderIndex, furColor, fluffColor, eyeColor, fluf
 	genderIndex = wrap(genderIndex, #speciesConfig.genders)
 	local gender = speciesConfig.genders[genderIndex + 1]
 
-	furColor = wrap(furColor, #speciesConfig.furColor)
+	primaryColor = wrap(primaryColor, #speciesConfig.primaryColor)
 	eyeColor = wrap(eyeColor, #speciesConfig.eyeColor)
 	earColor = wrap(earColor, #speciesConfig.earColor)
 	fluffColor = wrap(fluffColor, #speciesConfig.fluffColor)
@@ -28,7 +28,7 @@ function create(name, species, genderIndex, furColor, fluffColor, eyeColor, fluf
 
 	local directives = ""
 
-	directives = directives..(speciesConfig.furColor[furColor+1])
+	directives = directives..(speciesConfig.primaryColor[primaryColor+1])
 	directives = directives..(speciesConfig.eyeColor[eyeColor+1])
 	directives = directives..(speciesConfig.fluffColor[fluffColor+1])
 
@@ -56,7 +56,7 @@ function create(name, species, genderIndex, furColor, fluffColor, eyeColor, fluf
 		color = {51, 117, 237, 255},
 	}
 	local parameters = {
-		choices = { genderIndex, furColor, fluffColor, eyeColor, fluffStyle, earColor, shirtColor, pantsChoice, pantsColor, personality, ... },
+		choices = { genderIndex, primaryColor, fluffColor, eyeColor, fluffStyle, earColor, shirtColor, pantsChoice, pantsColor, personality, ... },
 		--this you can do a lot with, see the humanoid build script
 	}
 	local armor = {

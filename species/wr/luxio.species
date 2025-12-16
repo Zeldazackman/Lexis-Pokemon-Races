@@ -108,7 +108,7 @@
 		"2",
 		"3"
 	],
-	"furColor" : [
+	"primaryColor" : [
 		"?replace;418093=418093;57a3b9=57a3b9;70b9cf=70b9cf;", // blue (gen6) (default)
 		"?replace;418093=4a4a73;57a3b9=627bb4;70b9cf=7bacf6;", // blue-er (gen4)
 		"?replace;418093=734a31;57a3b9=ac9431;70b9cf=ffd552;" // yellow (gen4 shiny)

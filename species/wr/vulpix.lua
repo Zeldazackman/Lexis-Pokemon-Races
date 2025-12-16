@@ -9,7 +9,7 @@ local function wrap(index, length, secondary, secondaryLength)
 	if index < length then return index end
 	return math.fmod(index, length)
 end
-function create(name, species, genderIndex, furColor, hairColor, pawsColor, hairStyle, bellyColor, markingsColor, eyeColor, pantsColor, personality, tailMarkingsColor, ...)
+function create(name, species, genderIndex, primaryColor, hairColor, pawsColor, hairStyle, bellyColor, markingsColorChoice, eyeColor, pantsColor, personality, tailMarkingsColor, ...)
 	-- these values are zero indexed!
 
 	local speciesConfig = root.speciesConfig(species)
@@ -18,13 +18,13 @@ function create(name, species, genderIndex, furColor, hairColor, pawsColor, hair
 	tailMarkingsColor = wrap(tailMarkingsColor, #speciesConfig.tailMarkingsColor, markingsColor, #speciesConfig.markingsColor)
 
 	genderIndex = wrap(genderIndex, #speciesConfig.genders)
-	furColor = wrap(furColor, #speciesConfig.furColor)
+	primaryColor = wrap(primaryColor, #speciesConfig.primaryColor)
 	pawsColor = wrap(pawsColor, #speciesConfig.pawsColor)
 	bellyColor = wrap(bellyColor, #speciesConfig.bellyColor)
 	hairColor = wrap(hairColor, #speciesConfig.hairColor)
 	eyeColor = wrap(eyeColor, #speciesConfig.eyeColor)
 	hairStyle = wrap(hairStyle, #speciesConfig.hairStyle)
-	markingsColor = wrap(markingsColor, #speciesConfig.markingsColor)
+	markingsColor = wrap(markingsColorChoice, #speciesConfig.markingsColor)
 	personality = wrap(personality, #humanoidConfig.personalities)
 
 	local directives = ""
@@ -32,7 +32,7 @@ function create(name, species, genderIndex, furColor, hairColor, pawsColor, hair
 	directives = directives..(speciesConfig.bellyColor[bellyColor+1])
 	directives = directives..(speciesConfig.tailMarkingsColor[tailMarkingsColor+1])
 	directives = directives..(speciesConfig.markingsColor[markingsColor+1])
-	directives = directives..(speciesConfig.furColor[furColor+1])
+	directives = directives..(speciesConfig.primaryColor[primaryColor+1])
 	directives = directives..(speciesConfig.pawsColor[pawsColor+1])
 	directives = directives..(speciesConfig.hairColor[hairColor+1])
 	directives = directives..(speciesConfig.eyeColor[eyeColor+1])
@@ -61,7 +61,7 @@ function create(name, species, genderIndex, furColor, hairColor, pawsColor, hair
 		color = {51, 117, 237, 255},
 	}
 	local parameters = {
-		choices = { genderIndex, furColor, hairColor, pawsColor, hairStyle, bellyColor, markingsColor, eyeColor, pantsColor, personality, ... },
+		choices = { genderIndex, primaryColor, hairColor, pawsColor, hairStyle, bellyColor, markingsColorChoice, eyeColor, pantsColor, personality, ... },
 		--this you can do a lot with, see the humanoid build script
 	}
 	local armor = {
