@@ -18,6 +18,11 @@
 		"/ships/wr/eon/structures/T7.structure",
 		"/ships/wr/eon/structures/T8.structure"
 	],
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"electronic" : 8
+		}
+	},
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
 

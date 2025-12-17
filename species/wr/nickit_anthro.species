@@ -9,6 +9,12 @@
 	},
 	"respawnCasualCinematic" : "/cinematics/respawn/wr/pokemon/casual.cinematic",
 	"respawnSurvivalCinematic" : "/cinematics/respawn/wr/pokemon/survival.cinematic",
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"hoard" : 8,
+			"valuable" : 16
+		}
+	},
 	"fallbackShip" : "novakid",
 	"ships" : [
 		"/ships/wr/nickit_boat/structures/T0.structure",

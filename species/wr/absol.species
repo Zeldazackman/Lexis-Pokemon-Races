@@ -26,6 +26,14 @@
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
 
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"zen" : 4,
+			"dark" : 4
+		}
+	},
+
+
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
 	"buildScripts" : ["/humanoid/opensb/build.lua","/humanoid/wr/build_pokemon.lua"],
 	"createScripts" : ["/species/wr/absol.lua"],

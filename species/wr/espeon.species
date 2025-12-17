@@ -19,7 +19,12 @@
 		"/ships/wr/eon/structures/T8.structure"
 	],
 
-	"tenantData" : {"colonyTagCriteria":{}},
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"zen" : 4,
+			"hylotlvillage" : 4
+		}
+	},
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
 

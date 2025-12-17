@@ -18,6 +18,12 @@
 		"/ships/wr/eon/structures/T7.structure",
 		"/ships/wr/eon/structures/T8.structure"
 	],
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"bioluminescence" : 8,
+			"dark" : 4
+		}
+	},
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
 

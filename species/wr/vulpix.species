@@ -24,6 +24,12 @@
 	"effectDirectives" : "?replace;31a6ff=ff5900;9bd4ffFF=ffa037;FEFFFF=ffe589;",
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"spooky" : 4,
+			"glitch" : 4
+		}
+	},
 
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",
 	"buildScripts" : ["/humanoid/opensb/build.lua","/humanoid/wr/build_pokemon.lua"],

@@ -34,6 +34,11 @@
 		"/ships/wr/eon/structures/T7.structure",
 		"/ships/wr/eon/structures/T8.structure"
 	],
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"sea" : 8
+		}
+	},
 
 	"statusEffects" : [ { "stat":"breathProtection", "amount":1} ],
 	"humanoidConfig" : "/humanoid/wr/quadruped/quadruped.config",

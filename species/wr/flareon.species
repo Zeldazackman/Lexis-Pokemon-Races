@@ -34,6 +34,11 @@
 
 	"respawnCasualCinematic" : "/cinematics/respawn/wr/pokemon/casual.cinematic",
 	"respawnSurvivalCinematic" : "/cinematics/respawn/wr/pokemon/survival.cinematic",
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"electronic" : 8
+		}
+	},
 
 	"nameGen" : [ "/species/humanmalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
 

@@ -30,6 +30,11 @@
 		}
 	},
 	"effectDirectives" : "?replace;31a6ff=ffd029;9bd4ffFF=ffeb64;FEFFFF=fff8c6;",
+	"tenantData" : {
+		"colonyTagCriteria":{
+			"electronic" : 8
+		}
+	},
 
 	"respawnCasualCinematic" : "/cinematics/respawn/wr/pokemon/casual.cinematic",
 	"respawnSurvivalCinematic" : "/cinematics/respawn/wr/pokemon/survival.cinematic",
