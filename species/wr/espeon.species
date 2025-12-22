@@ -105,19 +105,31 @@
 		""
 	],
 	"primaryColor": [
-		"?replace;7a4879=7a4879;9d639b=9d639b;b379b2=b379b2;e5a2d3=e5a2d3;" // lilac (default)
+		"?replace;7a4879=7a4879;9d639b=9d639b;b379b2=b379b2;e5a2d3=e5a2d3;", // lilac (default)
+		"?replace;7a4879=623392;9d639b=7044a3;b379b2=815db3;e5a2d3=8878c8;", // indigo (gen2 A)
+		"?replace;7a4879=782890;9d639b=9b4aa3;b379b2=b361bb;e5a2d3=c878d0;", // lilac (gen2 B)
+		"?replace;7a4879=67429b;9d639b=845cbb;b379b2=9a62d1;e5a2d3=b473e6;", // purple (gen3)
+		"?replace;7a4879=528442;9d639b=62a14d;b379b2=6abe56;e5a2d3=73ff52;", // battery acid green (gen2 shiny)
+		"?replace;7a4879=187b00;9d639b=59b517;b379b2=7bd639;e5a2d3=a5ff42;" // battery acid green (shiny)
 	],
 	"secondaryColor": [
-		"?replace;323f72=323f72;345a9c=345a9c;4c71b2=4c71b2;" // blue (default)
+		"?replace;323f72=323f72;345a9c=345a9c;4c71b2=4c71b2;", // blue (default)
+		"?replace;323f72=52396a;345a9c=574178;4c71b2=674c8e;", // dark purple (gen3)
+		"?replace;323f72=396373;345a9c=417183;4c71b2=4a8ca5;" // cyan (shiny)
 	],
 	"markingsColor": [
 		"?replace;afb3cd=9d639b;c8cbdf=b379b2;eef0ff=e5a2d3;" // match body
 	],
 	"eyeColor" : [
-		"?replace;724ea2=724ea2FE;835fb2=835fb2FE;fdfbff=fdfbffFE;dbd5e2=dbd5e2FE" // lavender (default)
+		"?replace;724ea2=724ea2FE;835fb2=835fb2FE;fdfbff=fdfbffFE;dbd5e2=dbd5e2FE", // lavender (default)
+		"?replace;724ea2=001894FE;835fb2=152daaFE;fdfbff=fcfbffFF;dbd5e2=d7d5e2FE" // darkblue (gen3)
 	],
 	"gemColor": [
-		"?replace;8a1d51=8a1d51FE;c31b50=c31b50FE;ff76a1=ff76a1FE;" // ruby (default)
+		"?replace;8a1d51=8a1d51FE;c31b50=c31b50FE;ff76a1=ff76a1FE;", // spinel (default)
+		"?replace;8a1d51=a30000FE;c31b50=c90000FE;ff76a1=ff4343FE;", // ruby
+		"?replace;8a1d51=0000a3FE;c31b50=0000c9FE;ff76a1=4343ffFE;", // sapphire
+		"?replace;8a1d51=00a300FE;c31b50=00c900FE;ff76a1=43ff43FE;", // emerald
+		"?replace;8a1d51=c64200FE;c31b50=ff7b00FE;ff76a1=ff9a3cFE;" // hessonite (shiny)
 	],
 
 	"bellyColor": [

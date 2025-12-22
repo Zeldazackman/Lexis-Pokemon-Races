@@ -47,6 +47,7 @@ function create(name, species, genderIndex, primaryColor, hairStyle, secondaryCo
 	directives = directives .. (speciesConfig.primaryColor[primaryColor + 1])
 	directives = directives .. (speciesConfig.secondaryColor[secondaryColor + 1])
 	directives = directives .. (speciesConfig.eyeColor[eyeColor + 1])
+	directives = directives .. (speciesConfig.gemColor[gemColor + 1])
 
 
 	local personalityIdle, personalityArmIdle, personalityHeadOffset, personalityArmOffset = table.unpack(humanoidConfig.personalities[personality+1])
