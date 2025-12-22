@@ -139,12 +139,12 @@
 			// Empty Hands
 			{ "item" : "wr/luxio_flag" },
 			// Anvil
-			{ "item" : "wr/pokemonTier1Head" },
-			{ "item" : "wr/pokemonTier1Chest" },
-			{ "item" : "wr/pokemonTier1Legs" },
-			{ "item" : "wr/pokemonTier2Head" },
-			{ "item" : "wr/pokemonTier2Chest" },
-			{ "item" : "wr/pokemonTier2Legs" },
+			{ "item" : "wr/tier1Head" },
+			{ "item" : "wr/tier1Chest" },
+			{ "item" : "wr/tier1Legs" },
+			{ "item" : "wr/tier2Head" },
+			{ "item" : "wr/tier2Chest" },
+			{ "item" : "wr/tier2Legs" },
 
 			{ "item" : "ironshortsword" },
 			{ "item" : "ironbroadsword" },
@@ -156,12 +156,12 @@
 			{ "item" : "tungstenshotgun" },
 
 			// Anvil2
-			{ "item" : "wr/pokemonTier3Head" },
-			{ "item" : "wr/pokemonTier3Chest" },
-			{ "item" : "wr/pokemonTier3Legs" },
-			{ "item" : "wr/pokemonTier4Head" },
-			{ "item" : "wr/pokemonTier4Chest" },
-			{ "item" : "wr/pokemonTier4Legs" },
+			{ "item" : "wr/tier3Head" },
+			{ "item" : "wr/tier3Chest" },
+			{ "item" : "wr/tier3Legs" },
+			{ "item" : "wr/tier4Head" },
+			{ "item" : "wr/tier4Chest" },
+			{ "item" : "wr/tier4Legs" },
 
 			{ "item" : "titaniumdagger" },
 			{ "item" : "titaniumspear" },
@@ -205,16 +205,16 @@
 			// Spinning Wheel
 
 			// Spinning Wheel
-			{ "item" : "wr/pokemonPrideSocksChest" },
-			{ "item" : "wr/pokemonPrideSocksLegs" },
-			{ "item" : "wr/pokemonSocksChest" },
-			{ "item" : "wr/pokemonSocksLegs" },
-			{ "item" : "wr/pokemonStripedSocksAChest" },
-			{ "item" : "wr/pokemonStripedSocksALegs" },
-			{ "item" : "wr/pokemonStripedSocksBChest" },
-			{ "item" : "wr/pokemonStripedSocksBLegs" },
-			{ "item" : "wr/pokemonStripedSocksCChest" },
-			{ "item" : "wr/pokemonStripedSocksCLegs" }
+			{ "item" : "wr/prideSocksChest" },
+			{ "item" : "wr/prideSocksLegs" },
+			{ "item" : "wr/socksChest" },
+			{ "item" : "wr/socksLegs" },
+			{ "item" : "wr/stripedSocksAChest" },
+			{ "item" : "wr/stripedSocksALegs" },
+			{ "item" : "wr/stripedSocksBChest" },
+			{ "item" : "wr/stripedSocksBLegs" },
+			{ "item" : "wr/stripedSocksCChest" },
+			{ "item" : "wr/stripedSocksCLegs" }
 		]
 	}
 }
