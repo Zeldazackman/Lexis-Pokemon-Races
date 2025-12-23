@@ -34,7 +34,7 @@
 						"duck": "idle",
 						"swim": "walk",
 						"swimIdle" : "walk",
-						"sit": "walk",
+						"sit": { "properties": { "image": "<tailFrameset>:<body_state>.<body_frame>", "zLevel" : 2 } },
 						"lay": "walk"
 					},
 					"tailState": {
