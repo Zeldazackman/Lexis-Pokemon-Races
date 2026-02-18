@@ -5,7 +5,7 @@
 	{ "item" : "titaniumbar", "count" : 1 }
   ],
   "output" : {
-    "item" : "luxiomannequin",
+    "item" : "wr/luxiomannequin",
   "count" : 1
   },
   "groups" : [ "craftingwheel2", "ingredients" ]
